@@ -13,13 +13,13 @@ pipeline{
             post{
                 success{
                     mail to: "arnavvsingh05@gmail.com",
-                    subject: "Unit and Integration testing status email",
-                    body: "Unit and Integration testing was sucessfull"
+                    subject: "Unit and integration testing status email",
+                    body: "Unit and integration testing was sucessfull"
                 }
                 failure{
                     mail to: "arnavvsingh05@gmail.com",
-                    subject: "Unit and Integration testing status email",
-                    body: "Unit and Integration testing failed"
+                    subject: "Unit and integration testing status email",
+                    body: "Unit and integration testing failed"
                 }
             }
         }
@@ -36,12 +36,12 @@ pipeline{
                 success{
                     mail to: "arnavvsingh05@gmail.com",
                     subject: "Security scan status email",
-                    body: "Unit and Integration testing was sucessfull"
+                    body: "Security was sucessfull"
                 }
                 failure{
                     mail to: "arnavvsingh05@gmail.com",
                     subject: "Security scan status email",
-                    body: "Unit and Integration testing failed"
+                    body: "Security testing failed"
                 }
             }
         }
@@ -52,18 +52,18 @@ pipeline{
         }
         stage("Stage 6"){
             steps{
-                echo "run integration tests on the staging environment to ensure the application functions as expected in a production-like environment"
+                echo "Run integration tests on the staging environment to ensure the application functions as expected in a production-like environment"
             }
             post{
                 success{
                     mail to: "arnavvsingh05@gmail.com",
-                    subject: "Unit and Integration testing in production environment status",
-                    body: "Unit and Integration testing was sucessfull"
+                    subject: "Unit and Integration testing in staging environment status",
+                    body: "Unit and integration testing in staging environment was sucessfull"
                 }
                 failure{
                     mail to: "arnavvsingh05@gmail.com",
-                     subject: "Unit and Integration testing in production environment status",
-                    body: "Unit and Integration testing failed"
+                     subject: "Unit and Integration testing in staging environment status",
+                    body: "Unit and integration in staging environment testing failed"
                 }
             }
         }
