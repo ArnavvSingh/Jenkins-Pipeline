@@ -53,7 +53,7 @@ pipeline{
                     emailext(
                         to: "arnavvsingh05@gmail.com",
                         subject: "Security scan status",
-                        body: "Security scan failed" 
+                        body: "Security scan failed", 
                         attachLog: true
                     ) 
                 }
