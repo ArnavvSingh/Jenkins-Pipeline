@@ -12,15 +12,23 @@ pipeline{
             }
             post{
                 success{
-                    mail to: "arnavvsingh05@gmail.com",
-                    subject: "Unit and integration testing status email",
-                    body: "Unit and integration testing was sucessfull"
+                    emailext(
+                        to: "arnavvsingh05@gmail.com",
+                        subject: "Unit and Integration testing status",
+                        body: "Unit and Integration testing was sucessfull",
+                        attachLog: true
+                    )
                 }
                 failure{
-                    mail to: "arnavvsingh05@gmail.com",
-                    subject: "Unit and integration testing status email",
-                    body: "Unit and integration testing failed"
+                   emailext(
+                        to: "arnavvsingh05@gmail.com",
+                        subject: "Unit and Integration testing status",
+                        body: "Unit and Integration testing failed", 
+                        attachLog: true
+                    )
+
                 }
+                
             }
         }
         stage("Stage 3"){
@@ -34,14 +42,20 @@ pipeline{
             }
             post{
                 success{
-                    mail to: "arnavvsingh05@gmail.com",
-                    subject: "Security scan status email",
-                    body: "Security was sucessfull"
+                    emailext(
+                        to: "arnavvsingh05@gmail.com",
+                        subject: "Security scan status",
+                        body: "Security scan was sucessfull", 
+                        attachLog: true
+                    )
                 }
                 failure{
-                    mail to: "arnavvsingh05@gmail.com",
-                    subject: "Security scan status email",
-                    body: "Security testing failed"
+                    emailext(
+                        to: "arnavvsingh05@gmail.com",
+                        subject: "Security scan status",
+                        body: "Security scan failed" 
+                        attachLog: true
+                    ) 
                 }
             }
         }
@@ -56,14 +70,20 @@ pipeline{
             }
             post{
                 success{
-                    mail to: "arnavvsingh05@gmail.com",
-                    subject: "Unit and Integration testing in staging environment status",
-                    body: "Unit and integration testing in staging environment was sucessfull"
+                    emailext(
+                        to: "arnavvsingh05@gmail.com",
+                        subject: "Unit and Integration testing in staging environment status",
+                        body: "Unit and Integration testing was sucessfull", 
+                        attachLog: true
+                    ) 
                 }
                 failure{
-                    mail to: "arnavvsingh05@gmail.com",
-                     subject: "Unit and Integration testing in staging environment status",
-                    body: "Unit and integration in staging environment testing failed"
+                    emailext(
+                        to: "arnavvsingh05@gmail.com",
+                        subject: "Unit and Integration testing in staging environment status",
+                        body: "Unit and Integration testing failed",
+                        attachLog: true
+                    )
                 }
             }
         }
@@ -75,8 +95,4 @@ pipeline{
         
             
     }
-}              
-    
-
-
-
+}          
