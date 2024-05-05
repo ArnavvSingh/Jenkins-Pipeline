@@ -92,7 +92,11 @@ pipeline{
                 echo "Deploy the application to production server AWS EC2 instance"
             }
         }
-        
+        stage("Stage 8"){
+            steps{
+                echo "Successfully completed all steps"
+            }
+        }
             
     }
 }          
